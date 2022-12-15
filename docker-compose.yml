@@ -1,0 +1,22 @@
+services:
+  postgresql:
+    image: postgres
+    environment:
+      PGUSER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    user: root
+    volumes:
+      - ./dev_data/sqldb_postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --requirepass "${REDIS_PASSWORD}"
+    user: root
+    volumes:
+      - ./dev_data/redis:/var/lib/redis/data
+    ports:
+      - "6379:6739"

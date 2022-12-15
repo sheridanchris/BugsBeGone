@@ -1,0 +1,17 @@
+{
+  "private": "true",
+  "scripts": {
+    "postinstall": "dotnet tool restore",
+    "start": "dotnet fable watch src/Client -s -o dist --run vite",
+    "build": "dotnet fable src/Client -o build/client --run vite build"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "lit": "^2.0.0",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "vite": "^3.1.0"
+  }
+}

@@ -706,3 +706,4 @@ FodyWeavers.xsd
 fable_modules/
 dev_data/
 dist/
+build/
